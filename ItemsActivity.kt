@@ -70,33 +70,33 @@ class ItemsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         actionBarToggle.syncState()
 
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.Courses -> {
-                    Toast.makeText(this, "Courses", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.Notes -> {
-                    Toast.makeText(this, "Notes", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.nav_share -> {
-                    Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.nav_Send ->{
-                    Toast.makeText(this, "nav_send", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.nav_how_many ->{
-                    Toast.makeText(this, "howmajn", Toast.LENGTH_SHORT).show()
-                    true
+      //  navView.setNavigationItemSelectedListener { menuItem ->
+//             when (menuItem.itemId) {
+//                 R.id.Courses -> {
+//                     Toast.makeText(this, "Courses", Toast.LENGTH_SHORT).show()
+//                     true
+//                 }
+//                 R.id.Notes -> {
+//                     Toast.makeText(this, "Notes", Toast.LENGTH_SHORT).show()
+//                     true
+//                 }
+//                 R.id.nav_share -> {
+//                     Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show()
+//                     true
+//                 }
+//                 R.id.nav_Send ->{
+//                     Toast.makeText(this, "nav_send", Toast.LENGTH_SHORT).show()
+//                     true
+//                 }
+//                 R.id.nav_how_many ->{
+//                     Toast.makeText(this, "howmajn", Toast.LENGTH_SHORT).show()
+//                     true
 
-                }
-                else -> {
-                    false
-                }
-            }
+//                 }
+//                 else -> {
+//                     false
+//                 }
+//             }
         }
         //DisplayNotes()
         DisplayCourses()
@@ -104,31 +104,31 @@ class ItemsActivity : AppCompatActivity() {
     }
 
 @Override
-//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.Courses -> {
-//                DisplayCourses()
-//            }
-//            R.id.Notes -> {
-//                DisplayNotes()
-//            }
-//            R.id.nav_share -> {
-//                handleSelection(R.string.nav_share_message)
-//            }
-//            R.id.nav_Send ->{
-//                handleSelection(R.string.send)
-//            }
-//            R.id.nav_how_many ->{
-//                val message = getString(R.string.how_many,
-//                DataManager.notes.size,DataManager.courses.size)
-//                val listItems = findViewById<RecyclerView>(R.id.listItems)
-//                Snackbar.make(listItems,message,Snackbar.LENGTH_LONG).show()
-//
-//            }
-//        }
-//        drawerLayout.closeDrawer(GravityCompat.START)
-//        return true
-//    }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+       when (item.itemId) {
+           R.id.Courses -> {
+               DisplayCourses()
+           }
+           R.id.Notes -> {
+               DisplayNotes()
+           }
+           R.id.nav_share -> {
+               handleSelection(R.string.nav_share_message)
+           }
+           R.id.nav_Send ->{
+               handleSelection(R.string.send)
+           }
+           R.id.nav_how_many ->{
+               val message = getString(R.string.how_many,
+               DataManager.notes.size,DataManager.courses.size)
+               val listItems = findViewById<RecyclerView>(R.id.listItems)
+               Snackbar.make(listItems,message,Snackbar.LENGTH_LONG).show()
+
+           }
+       }
+       drawerLayout.closeDrawer(GravityCompat.START)
+       return true
+   }
 
     private fun handleSelection(stringId: Int) {
         val listItems = findViewById<RecyclerView>(R.id.listItems)
